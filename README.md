@@ -15,12 +15,10 @@ The goal was to transform raw data into actionable intelligence for stakeholders
 ## 🖼️ Dashboard Visuals
 
 ### 1. Executive Summary
-*(Place a screenshot of your main dashboard page here)*
-![Dashboard Screenshot 1](link-to-your-image.png)
 
-### 2. Geographic Analysis
-*(Place a screenshot of your map view here)*
-![Dashboard Screenshot 2](link-to-your-image.png)
+<img width="1356" height="770" alt="image" src="https://github.com/user-attachments/assets/286ec63d-3f79-4f12-ab9f-ea4681b4a46a" />
+
+
 
 ---
 
