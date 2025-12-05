@@ -1,85 +1,77 @@
-# Zomato
-# 🍔 Zomato Market Insights: Pan-India Executive Summary
+# 📊 Superstore Executive Summary: Sales & Profitability Analysis
 
 ![Power BI](https://img.shields.io/badge/Power_BI-Desktop-yellow?style=for-the-badge&logo=powerbi)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![Data](https://img.shields.io/badge/Data-Zomato_Kaggle-blue?style=for-the-badge)
 
-## 📊 Project Overview
-This project is an end-to-end **Power BI** analysis of the Indian restaurant aggregation market. Using a dataset of over **45,000+ restaurants** across India's top 100 cities, this dashboard provides strategic insights into dining trends, pricing dynamics, and customer preferences.
-
-The goal was to transform raw data into actionable intelligence for stakeholders in the Food-Tech industry, helping them understand where the market is saturated and where opportunities lie.
-
----
-
-## 🖼️ Dashboard Visuals
-
-### 1. Executive Summary
-
-<img width="1356" height="770" alt="image" src="https://github.com/user-attachments/assets/286ec63d-3f79-4f12-ab9f-ea4681b4a46a" />
+## 🖼️ Dashboard Preview
+<img width="1519" height="852" alt="image" src="https://github.com/user-attachments/assets/784b1fb5-610c-44f2-994f-d10532804400" />
 
 
+## 📝 Project Overview
+This project involves a comprehensive analysis of the **Superstore Sales Dataset**, a retail dataset containing data on sales, profits, and shipping across the United States. 
+
+The goal was to build an interactive **Power BI Dashboard** that allows executives to monitor Key Performance Indicators (KPIs), identify profitable regions, and analyze shipping efficiency against targets. The dashboard utilizes a dark-themed UI for high-contrast visibility of critical metrics.
+
+**Dataset Source:** [Kaggle - Superstore Dataset](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)
 
 ---
 
-## 🎯 Problem Statement
-The Indian food delivery market is highly competitive. Stakeholders (Investors, Restaurant Owners, Zomato Execs) struggle to answer key questions based on raw data alone:
-1.  **Market Penetration:** Which cities have high restaurant density but low average ratings?
-2.  **Pricing Strategy:** What is the optimal "Cost for Two" in Tier-1 vs. Tier-2 cities?
-3.  **Operational Quality:** Do restaurants with "High Safety" tags actually get better customer ratings?
-4.  **Cuisine Demand:** Which cuisines are the primary revenue drivers in specific regions?
+## 🎯 Key Business Questions Answered
+1.  **Profitability:** Which states and customers are driving the highest profits?
+2.  **Operational Efficiency:** Are we meeting our shipping time targets across different shipping modes?
+3.  **Sales Trends:** How do sales vary by month across different product categories (Furniture, Office Supplies, Technology)?
+4.  **Customer Segmentation:** Which customer segments (Consumer, Corporate, Home Office) contribute most to sales volume?
 
 ---
 
-## 🛠️ Tech Stack & Methodology
+## 📊 Dashboard Features & Insights
 
-### 1. Data Cleaning (Power Query)
-* **Handling Nulls:** Removed records with missing coordinates or critical rating data.
-* **Standardization:** Corrected inconsistent city names and merged duplicate entries.
-* **Transformation:** Created conditional columns to categorize "Price Range" into Low, Medium, and Premium buckets.
+### 1. KPI Header
+* **Total Sales:** 2.30M
+* **Total Profit:** 286.40K
+* **Profit Margin:** 12.03%
+* *Interactive Slicers:* Allows filtering by **Year** and **Region**.
 
-### 2. Data Modeling
-* Built a **Star Schema** to optimize performance.
-* Created a dedicated **Date Table** (if applicable) and Dimension tables for `City`, `Cuisine`, and `Restaurant Info`.
+### 2. Operational Analysis
+* **Avg Shipping Days by Ship Mode:** A bar chart analyzing the efficiency of shipping classes.
+    * *Insight:* "Standard Class" shipping takes the longest (~5 days), while "Same Day" is the fastest. A reference line highlights the acceptable threshold.
 
-### 3. DAX Calculations
-Key measures created for this analysis:
-* `Avg Rating` = AVERAGE(Data[Aggregate Rating])
-* `Restaurant Count` = DISTINCTCOUNT(Data[Restaurant ID])
-* `Safety Compliance %` = Calculate percentage of restaurants with valid hygiene ratings.
-* `Delivery Speed Score` = Weighted average based on delivery time buckets.
+### 3. Regional & State Performance
+* **Profit Margin of Each State:** A column chart ranking states by profitability.
+    * *Insight:* **California** and **New York** are the clear leaders in profit generation, significantly outperforming other states like Washington and Michigan.
 
----
+### 4. Product & Segment Trends
+* **Average of Sales by Category:** A line chart showing monthly trends.
+    * *Insight:* **Technology** products show significant volatility with a strong peak in sales towards the end of the year (Oct-Nov), likely due to holiday seasonality.
+* **Sales by Segment:** A pie chart breakdown.
+    * *Insight:* The **Consumer** segment is the largest contributor to sales, followed by Corporate.
 
-## 🔍 Key Insights Discovered
-
-* **Geographic Dominance:** While North India has the highest density of restaurants, South Indian cities show a higher average customer retention rate.
-* **The "Safety Premium":** Restaurants with "Excellent" safety ratings saw a **15% higher** average order value compared to non-compliant ones.
-* **Pricing Sweet Spot:** In Tier-1 cities, the optimal "Cost for Two" for maximum order volume is between **₹500 - ₹800**.
-* **Cuisine Trends:** Local cuisines outperform international chains in Tier-2 cities, whereas Fast Food dominates the metro hubs.
+### 5. Customer Insights
+* **Top 5 Customer Sales Overview:** An area chart highlighting the top revenue-generating clients (e.g., Adrian Barton, Tamara Chand) to identify key accounts.
 
 ---
 
-## 📂 Dataset
-* **Source:** (https://www.kaggle.com/datasets/rrkcoder/zomato-data-40k-restaurants-of-indias-100-cities/data)
-* **Volume:** ~45,000 Records
-* **Key Attributes:** Restaurant Name, City, Location, Cuisines, Currency, Has Table Booking, Has Online Delivery, Aggregate Rating, Votes.
+## 🛠️ Technical Implementation
+* **Data Cleaning:** Processed raw CSV data to ensure correct data types for dates and currency.
+* **DAX Measures:** Created custom measures for:
+    * `Total Sales` = SUM(Orders[Sales])
+    * `Total Profit` = SUM(Orders[Profit])
+    * `Profit Margin` = DIVIDE([Total Profit], [Total Sales], 0)
+    * `Avg Shipping Days` = AVERAGE(Orders[Days to Ship])
+* **Data Visualization:** Used standard visuals (Bar, Line, Area, Pie) with a consistent blue-on-black color theme for visual hierarchy.
 
 ---
 
-## 🚀 How to Run This Project
+## 🚀 How to Run
 1.  Download the `.pbix` file from this repository.
-2.  Open the file in **Power BI Desktop**.
-3.  (Optional) If you want to refresh the data, update the data source settings to point to your local CSV file path.
+2.  Open the file in **Microsoft Power BI Desktop**.
+3.  The data is embedded, but you can update the Data Source settings to point to the local CSV file if needed.
 
 ---
 
 ## 👤 Author
+* **Vamsi siva ganesh seelam**
+* [Your LinkedIn Profile Link]https://www.linkedin.com/in/vamsi-/
+* (https://vamsisivaganesh.vercel.app/)
 
-**VAMSI SIVA GANESH SEELAM**
-* Data Analyst | Power BI Developer
-* https://www.linkedin.com/in/vamsi-
-* https://vamsisivaganesh.vercel.app/
-
----
-*If you find this project useful, please ⭐ this repository!*
+*If you found this project useful, please give it a ⭐!*
