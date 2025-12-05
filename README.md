@@ -71,7 +71,7 @@ The goal was to build an interactive **Power BI Dashboard** that allows executiv
 
 ## 👤 Author
 * **Vamsi siva ganesh seelam**
-* [Your LinkedIn Profile Link]https://www.linkedin.com/in/vamsi-/
-* (https://vamsisivaganesh.vercel.app/)
+* **LinkedIn Profile** : https://www.linkedin.com/in/vamsi-/
+* **Portfolio** : https://vamsisivaganesh.vercel.app/
 
 *If you found this project useful, please give it a ⭐!*
